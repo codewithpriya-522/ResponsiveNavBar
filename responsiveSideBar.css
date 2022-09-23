@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;1,300&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    min-width: 100%;
+    background-color: cornsilk;
+}
+nav{
+    position: fixed;
+    top: 0;
+    left:0;
+    height: 77.5px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: rgb(177, 117, 137);
+    box-shadow: 0 0 1px rgb(170, 126, 126);
+}
+
+nav .logo{
+    display: flex;
+    align-items: center;
+    margin: 0 24px;
+}
+.logo .menu-icon{
+    color: black;
+    font-size: 28px;
+    margin-right: 14px;
+    cursor: pointer;
+}
+.logo .logo-name{
+    color: black;
+    font-size: 25px;
+    font-weight: 500;
+}
+
+nav .sidebar{
+    position: fixed;
+    top: 0;
+    left:-100%;
+    height: 100%;
+    padding: 20px 0;
+    opacity: 0.5;
+    width: 260px;
+    background-color:rgb(177, 117, 137);;
+    box-shadow: 0 5px 5px 1px rgba(0,0,0,2) ;
+    transition: all 0.5s ease;
+}
+nav.open .sidebar{
+    left: 0px;
+}
+.sidebar .sidebar-container{
+    padding: 30px 16px;
+    display: flex;
+    height: 85%;
+    flex-direction:column ;
+    justify-content: space-between;
+}
+.sidebar-container .list{
+    list-style: none;
+}
+
+.list .Home{
+    text-decoration: none;
+    display: flex;
+    text-align: center;
+    padding: 14px 12px;
+    border-radius: 8px;
+}
+.Home .icons{
+    margin-right:14px ;
+    font-size: 20px;
+    color: rgb(17, 15, 15);
+}
+.Home .link{
+    font-size: 16px;
+    color: rgb(17, 15, 15);
+    font-weight: 400
+}
+.Home:hover{
+    background-color: rgb(128, 71, 89);
+}
+.Home:hover .icons,
+.Home:hover .link{
+    color: rgb(240, 230, 230);
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    left: -100%;
+    height: 1000vh;
+    width: 200%;
+    background: rgba(0,0,0,0.3);
+    transition: all 0.5s ease; 
+    pointer-events: none;
+}
+nav.open ~.overlay{
+    left: 260px;
+    opacity: 1;
+    pointer-events: auto;
+}
